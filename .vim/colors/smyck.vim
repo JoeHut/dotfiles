@@ -1,0 +1,1 @@
+../bundle/smyck-vim/colors/smyck.vim

@@ -1,0 +1,39 @@
+[global_config]
+  borderless = True
+  focus = mouse
+  inactive_color_offset = 1.0
+  title_font = SFNS Display 9
+  title_inactive_bg_color = "#ffffff"
+  title_receive_bg_color = "#74ca83"
+  title_receive_fg_color = "#eadbdb"
+  title_transmit_bg_color = "#7995d7"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#2d2d2d"
+    cursor_color = "#c75646"
+    font = Liberation Mono for Powerline 12
+    foreground_color = "#f7f7f7"
+    palette = "#2d2d2d:#c75646:#8eb33b:#d0b03c:#72b3cc:#c8a0d1:#218693:#b0b0b0:#5d5d5d:#e09690:#cdee69:#ffe377:#9cd9f0:#fbb1f9:#77dfd8:#f7f7f7"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[old]]
+    allow_bold = False
+    background_color = "#1e1e1e"
+    cursor_color = "#c5c8c6"
+    font = Liberation Mono for Powerline 12
+    foreground_color = "#ddd8d8"
+    palette = "#282a2e:#a54242:#8c9440:#de935f:#5f819d:#85678f:#5e8d87:#707880:#373b41:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
