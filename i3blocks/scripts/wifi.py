@@ -6,7 +6,7 @@ from tools import *
 from pythonwifi.iwlibs import Wireless
 import re
 
-interface = 'wlp4s0'
+interface = 'wlp5s0'
 wifi = Wireless(interface)
 
 # try:
