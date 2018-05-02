@@ -41,7 +41,7 @@ interval=20
 #[separator]
 
 [battery]
-command=$SCRIPT_DIR/i3blocks-contrib/battery2/battery2
+command=$SCRIPT_DIR/scripts/battery2/battery2
 interval=5
 
 [separator]
