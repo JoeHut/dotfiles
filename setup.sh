@@ -40,9 +40,12 @@ delete_config $CONFIG_DIR/i3blocks
 delete_config $CONFIG_DIR/terminator
 delete_config $HOME/.vim
 delete_config $HOME/.vimrc
+delete_config $HOME/.zshrc
+
 ln -s $SCRIPTPATH/i3 $CONFIG_DIR
 ln -s $SCRIPTPATH/i3blocks $CONFIG_DIR
 ln -s $SCRIPTPATH/terminator $CONFIG_DIR
 ln -s $SCRIPTPATH/.vim $HOME
 ln -s $SCRIPTPATH/.vimrc $HOME/.vimrc
 ln -s $SCRIPTPATH/.vim/init.vim $SCRIPTPATH/.vimrc
+ln -s $SCRIPTPATH/.zshrc $HOME/.zshrc
