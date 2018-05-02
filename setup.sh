@@ -23,7 +23,23 @@ else
   mkdir -p $CONFIG_DIR
 fi
 
+function delete_config {
+  if [ -d "$1" ]; then
+    if [ -L "$1" ]; then
+      rm $1
+    else
+      rm -r $1
+    fi
+  else
+    rm $1
+  fi
+}
 
+delete_config $CONFIG_DIR/i3
+delete_config $CONFIG_DIR/i3blocks
+delete_config $CONFIG_DIR/terminator
+delete_config $HOME/.vim
+delete_config $HOME/.vimrc
 ln -s $SCRIPTPATH/i3 $CONFIG_DIR
 ln -s $SCRIPTPATH/i3blocks $CONFIG_DIR
 ln -s $SCRIPTPATH/terminator $CONFIG_DIR
