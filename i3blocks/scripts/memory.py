@@ -6,7 +6,7 @@ import psutil
 
 pct = psutil.virtual_memory().percent
 
-ic = icon('')
+ic = icon('')
 g = bar(pct / 100.0)
 
 print("%s %s %0.f%%" % (ic, g, pct))
