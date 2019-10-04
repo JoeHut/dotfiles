@@ -5,7 +5,7 @@
  *
  * @author Johannes Hutter <johannes@proglove.de>
  */
-#define SYS_LOG_DOMAIN "[:VIM_EVAL:]expand("%:t:r")[:END_EVAL:]"
-#include <logging/sys_log.h>
+#include <logging/log.h>
+LOG_MODULE_REGISTER([:VIM_EVAL:]expand("%:t:r")[:END_EVAL:]);
 
 #include "[:VIM_EVAL:]expand("%:t:r")[:END_EVAL:].h"
