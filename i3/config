@@ -63,14 +63,15 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 220 -opaci
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id dropbox
 exec --no-startup-id nm-applet --sm-disable
-exec --no-startup-id redshift-gtk
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent & redshift-gtk
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
+exec --no-startup-id luxafor-linux.py fade -l 255 -s 1 -g 255
 
 #automatically lock after timeout
 exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/lock.sh
 
 #automatically rename workspaces based on contents
-exec --no-startup-id ~/.config/i3/autoname-workspace/i3-autoname-workspaces.py &
+exec --no-startup-id ~/.config/i3/i3scripts/autoname_workspaces.py &
 
 bindsym $mod+b exec ~/.config/i3/bogus.py
 
@@ -195,18 +196,18 @@ bar {
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
 #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
 #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle 
 #mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-set $Locker /home/joe/.config/i3/lock.sh && sleep 1
+set $Locker /home/joe/.config/i3/lock.sh
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -223,6 +224,20 @@ mode "$mode_system" {
 }
 
 bindsym $mod+x mode "$mode_system"
+
+set $mode_luxafor Flag (r) red, (g) green, (b) blue, (o) prorange (p) party
+mode "$mode_luxafor" {
+	bindsym r exec --no-startup-id luxafor-linux.py fade -l 255 -s 64 -r 255 -g 0 -b 0, mode "default"
+	bindsym g exec --no-startup-id luxafor-linux.py fade -l 255 -s 64 -r 0 -g 255 -b 0, mode "default"
+	bindsym b exec --no-startup-id luxafor-linux.py fade -l 255 -s 64 -r 0 -g 0 -b 255, mode "default"
+	bindsym o exec --no-startup-id luxafor-linux.py fade -l 255 -s 64 -r 244 -g 121 -b 32, mode "default"
+	bindsym p exec --no-startup-id luxafor-linux.py pattern -p 3 -r 2, mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+q mode "$mode_luxafor"
 
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus left

@@ -25,6 +25,7 @@
     	set fileformat=unix
     	set fileformats=unix,dos
 	set tags=./tags;$HOME   " walk directory tree up to $HOME looking for tags
+	set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 	filetype plugin indent on
 
 	let g:tex_flavor = "latex"
@@ -194,6 +195,7 @@
     Plugin 'mtth/scratch.vim'
     Plugin 'ajh17/VimCompletesMe'
     Plugin 'brendonrapp/smyck-vim'
+    Plugin 'ryanoasis/vim-devicons'
 
     " Git
     Plugin 'airblade/vim-gitgutter'
@@ -214,7 +216,6 @@
     Plugin 'hail2u/vim-css3-syntax'
     Plugin 'joukevandermaas/vim-ember-hbs'
     Plugin 'alexlafroscia/vim-ember-cli'
-    Plugin 'ryanoasis/vim-devicons'
     Plugin 'udalov/kotlin-vim'
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
